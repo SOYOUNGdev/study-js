@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>포커스, 블러 이벤트</title>
+        <style>
+            input {
+                outline: none;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="" name="info">
+            <input
+                type="text"
+                name="name"
+                placeholder="이름"
+                autocomplete="none"
+            />
+            <input
+                type="text"
+                name="age"
+                placeholder="나이"
+                autocomplete="none"
+            />
+        </form>
+    </body>
+    <script>
+        // focus된 input태그의 테두리는 녹색으로,
+        // blur된 input태그의 테두리는 빨간색으로 설정
+        const name = document.info.name;
+        const age = document.info.age;
+
+        const inputs = document.querySelectorAll("input[type=text]");
+        inputs.forEach((input) => {
+            input.addEventListener("focus", (e) => {
+                e.target.style.border = "1px solid green";
+            });
+            input.addEventListener("blur", (e) => {
+                e.target.style.border = "1px solid red";
+            });
+        });
+
+        // name.addEventListener("focus", () => {
+        //     name.style.border = "1px solid green";
+        // });
+
+        // age.addEventListener("focus", () => {
+        //     age.style.border = "1px solid green";
+        // });
+
+        // name.addEventListener("blur", () => {
+        //     name.style.border = "1px solid red";
+        // });
+
+        // age.addEventListener("blur", () => {
+        //     age.style.border = "1px solid red";
+        // });
+
+        // name.addEventListener("blur", () => {
+        //     if (name.value) {
+        //         name.style.border = "1px solid green";
+        //         return;
+        //     } else {
+        //         name.style.border = "1px solid red";
+        //         name.focus();
+        //     }
+        // });
+        // age.addEventListener("blur", () => {
+        //     if (age.value) {
+        //         age.style.border = "1px solid green";
+        //         return;
+        //     } else {
+        //         age.style.border = "1px solid red";
+        //         age.focus();
+        //     }
+        // });
+    </script>
+</html>
